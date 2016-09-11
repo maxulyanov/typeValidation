@@ -1,6 +1,6 @@
 /*
  * typeValidation: Adds validation arguments for javascript functions
- * 0.1
+ * 0.1.1
  *
  * By Max Ulyanov
  * Src: https://github.com/M-Ulyanov/typeValidation

@@ -1,6 +1,6 @@
 {
   "name": "type-validation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Adds validation arguments for javascript functions",
   "main": "typeValidation.js",
   "scripts": {
