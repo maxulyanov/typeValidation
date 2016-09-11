@@ -1,17 +1,15 @@
-# CoreListener
-
-Adds validation arguments for javascript functions
-
-
-##NPM
-`npm install type-validation`
-
-
-##Use case
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>typeValidation</title>
+  <script src="typeValidation-compiled.js"></script>
+  <script>
 
 
-### Simple example
-```javascript
+    // Use case
+
+    // # 1 Простой пример валидации аргументов
     function summator(x, y, z) {
       return x + y + z;
     }
@@ -22,41 +20,38 @@ Adds validation arguments for javascript functions
 
     summator(1, 2, 3); // 6
     summator(1, 2, 'str'); // Error!
-```
 
 
-### Object method
-Set the context by third parameter
-```javascript
-      var user = {
-          name: 'Mark',
-          age: 25,
-          getInfo: function() {
-            return this.name + ' ' + this.age;
-          },
-          setInfo: function(name, age) {
-            this.name = name;
-            this.age = age;
-          }
-        };
-    
-        user.setInfo = typeValidation(user.setInfo, [
-          {type: 'string', required: true},
-          {type: 'number', required: true}
-        ], user);
-    
-        user.setInfo('Mars', 20);
-        console.log(user.getInfo());
-```
+    // # 2 Object method
+    var user = {
+      name: 'Mark',
+      age: 25,
+      getInfo: function() {
+        return this.name + ' ' + this.age;
+      },
+      setInfo: function(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+    };
+
+    user.setInfo = typeValidation(user.setInfo, [
+      {type: 'string', required: true},
+      {type: 'number', required: true}
+    ], user);
+
+    user.setInfo('Mars', 20);
+    console.log(user.getInfo());
 
 
-### Use callback
-Callback should return false if argument not valid
-```javascript
+
+
+    // #3 Коллбек должен вернуть true, если значение валидно!
+    // Вернуть сообщение об ошибке
     function setAge(age) {
       return age;
     }
-    
+
     setAge = typeValidation(setAge, [
       {
         type: 'number',
@@ -70,17 +65,17 @@ Callback should return false if argument not valid
         }
       }
     ]);
-    
+
     setAge(17); // Minimum age 18!
-```
 
 
-### Object data validation
-```javascript
+
+
+    // # 4 O
     function renderHTML(selector, data) {
       return 'render success! Status code: ' + data.statusCode;
     }
-    
+
     renderHTML = typeValidation(renderHTML, [
       {
         type: 'string',
@@ -111,7 +106,7 @@ Callback should return false if argument not valid
         ]
       }
     ]);
-    
+
     renderHTML('.root', {
       statusCode: 200,
 
@@ -120,17 +115,16 @@ Callback should return false if argument not valid
       date: 123, // Error!
 //    date: new Date() // Ok!
     });
-```
 
 
-### Array items validation
-```javascript
+
+
     function MixinArray(array) {
       return array.map(function(item) {
         return item;
       }).join(' ');
     };
-    
+
     MixinArray = typeValidation(MixinArray, [
       {
         type: 'array',
@@ -147,7 +141,17 @@ Callback should return false if argument not valid
         },
       }
     ]);
-    
-    MixinArray(['firstString', 1, 'SecondString']);
-```
 
+    var r = MixinArray(['firstString', 1, 'SecondString']);
+    console.log(r);
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+</body>
+</html>

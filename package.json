@@ -1,0 +1,26 @@
+{
+  "name": "type-validation",
+  "version": "0.1.0",
+  "description": "Adds validation arguments for javascript functions",
+  "main": "typeValidation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-Ulyanov/typeValidation.git"
+  },
+  "keywords": [
+    "Javascript validation",
+    "Arguments validation",
+    "parameter validation",
+    "javascript strong type",
+    "javascript function validation"
+  ],
+  "author": "Max Ulyanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/M-Ulyanov/typeValidation/issues"
+  },
+  "homepage": "https://github.com/M-Ulyanov/typeValidation#readme"
+}
